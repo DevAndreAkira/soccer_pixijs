@@ -15,8 +15,17 @@ const openingClickPlay = () => {
     opening.play();
 }
 
+const music = PIXI.sound.Sound.from('../sound/skank.mp3');
+music.volume = 0.1;
+const musicClickPlay = () => {
+    music.play(({
+        loop: true,
+    }));
+}
+musicClickPlay();
+
 const kick = PIXI.sound.Sound.from('../sound/kick.mp3');
-kick.volume = 0.25;
+kick.volume = 1;
 const kickClickPlay = () => {
     kick.play();
 }
