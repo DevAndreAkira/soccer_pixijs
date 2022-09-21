@@ -146,7 +146,9 @@ function startGame() {
         protagonista.y = pos.y;
     }
 
-    onclick = function () {
+    // onclick = function () {
+
+    addEventListener('pointerdown', (event) => {
         if (gols < 3) {
             if (contador > 0) {
                 kickClickPlay();
@@ -194,5 +196,5 @@ function startGame() {
                 }
             }
         }
-    }
+    })
 }
