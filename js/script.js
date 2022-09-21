@@ -48,6 +48,7 @@ startText.x = app.screen.width / 2;
 startText.y = app.screen.height / 2;
 startText.interactive = true;
 startText.buttonMode = true;
+startText.scale.set(.5)
 startText.on('pointerdown', onClick1);
 app.stage.addChild(startText);
 
@@ -121,10 +122,8 @@ function startGame() {
     winText.y = app.screen.height / 2;
     winText.interactive = true;
     winText.buttonMode = true;
+    winText.scale.set(.5)
     winText.on('pointerdown', onClick);
-    // function onClick() {
-    //     window.location.reload();
-    // }
 
     const loseText = PIXI.Sprite.from('./images/perdeu.png');
     loseText.anchor.set(0.5);
@@ -132,6 +131,7 @@ function startGame() {
     loseText.y = app.screen.height / 2;
     loseText.interactive = true;
     loseText.buttonMode = true;
+    loseText.scale.set(.5)
     loseText.on('pointerdown', onClick);
     function onClick() {
         window.location.reload();
