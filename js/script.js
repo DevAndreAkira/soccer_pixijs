@@ -73,7 +73,7 @@ function startGame() {
     life.anchor.set(0.5);
     life.width = 50;
     life.height = 50;
-    life.x = 25;
+    life.x = app.screen.width / 2 - 50;
     life.y = 25;
     app.stage.addChild(life);
 
@@ -81,7 +81,7 @@ function startGame() {
     life2.anchor.set(0.5);
     life2.width = 50;
     life2.height = 50;
-    life2.x = 75;
+    life2.x = app.screen.width / 2;
     life2.y = 25;
     app.stage.addChild(life2);
 
@@ -89,7 +89,7 @@ function startGame() {
     life3.anchor.set(0.5);
     life3.width = 50;
     life3.height = 50;
-    life3.x = 125;
+    life3.x = app.screen.width / 2 + 50;
     life3.y = 25;
     app.stage.addChild(life3);
 
