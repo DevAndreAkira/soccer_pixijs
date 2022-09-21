@@ -148,7 +148,7 @@ function startGame() {
 
     // onclick = function () {
 
-    addEventListener('pointerdown', (event) => {
+    onpointerdown = (event) => {
         if (gols < 3) {
             if (contador > 0) {
                 kickClickPlay();
@@ -196,5 +196,5 @@ function startGame() {
                 }
             }
         }
-    })
+    }
 }
