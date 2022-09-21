@@ -1,5 +1,5 @@
 ![visitor badge](https://visitor-badge.glitch.me/badge?page_id=github.com/DevAndreAkira/soccer_pixijs.visitor-badge)
-# <img src="https://raw.githubusercontent.com/DevAndreAkira/soccer_pixijs/master/images/ball.png" alt="Icon" width="23" /> Front-box - Game
+# <img src="https://raw.githubusercontent.com/DevAndreAkira/soccer_pixijs/master/images/ball.png" alt="Icon" width="23" /> Soccer Goal - Game
 
 Soccer Goal - Simple soccer Point and click game.
 
