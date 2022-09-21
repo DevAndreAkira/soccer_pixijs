@@ -9,13 +9,13 @@ const app = new PIXI.Application({
 document.body.appendChild(app.view);
 
 // ? SOUND
-const opening = PIXI.sound.Sound.from('../sound/gol_sound.mp3');
+const opening = PIXI.sound.Sound.from('./sound/gol_sound.mp3');
 opening.volume = 0.25;
 const openingClickPlay = () => {
     opening.play();
 }
 
-const music = PIXI.sound.Sound.from('../sound/skank.mp3');
+const music = PIXI.sound.Sound.from('./sound/skank.mp3');
 music.volume = 0.1;
 const musicClickPlay = () => {
     music.play(({
@@ -23,13 +23,13 @@ const musicClickPlay = () => {
     }));
 }
 
-const kick = PIXI.sound.Sound.from('../sound/kick.mp3');
+const kick = PIXI.sound.Sound.from('./sound/kick.mp3');
 kick.volume = 1;
 const kickClickPlay = () => {
     kick.play();
 }
 
-const lose = PIXI.sound.Sound.from('../sound/lose.ogg');
+const lose = PIXI.sound.Sound.from('./sound/lose.ogg');
 lose.volume = 0.25;
 const loseClickPlay = () => {
     lose.play();
@@ -37,12 +37,12 @@ const loseClickPlay = () => {
 
 document.body.style.cursor = "none";
 
-var background = PIXI.Sprite.from('../images/gol.jpg');
+var background = PIXI.Sprite.from('./images/gol.jpg');
 background.width = app.screen.width;
 background.height = app.screen.height;
 app.stage.addChild(background);
 
-const startText = PIXI.Sprite.from('../images/titulo.png');
+const startText = PIXI.Sprite.from('./images/titulo.png');
 startText.anchor.set(0.5);
 startText.x = app.screen.width / 2;
 startText.y = app.screen.height / 2;
@@ -60,7 +60,7 @@ function onClick1() {
 
 function startGame() {
     musicClickPlay();
-    const protagonista = PIXI.Sprite.from('../images/target.png');
+    const protagonista = PIXI.Sprite.from('./images/target.png');
     protagonista.anchor.set(0.5);
     protagonista.width = 50;
     protagonista.height = 50;
@@ -68,7 +68,7 @@ function startGame() {
     protagonista.y = app.screen.height / 2;
     app.stage.addChild(protagonista);
 
-    const life = PIXI.Sprite.from('../images/ball.png');
+    const life = PIXI.Sprite.from('./images/ball.png');
     life.anchor.set(0.5);
     life.width = 50;
     life.height = 50;
@@ -76,7 +76,7 @@ function startGame() {
     life.y = 25;
     app.stage.addChild(life);
 
-    const life2 = PIXI.Sprite.from('../images/ball.png');
+    const life2 = PIXI.Sprite.from('./images/ball.png');
     life2.anchor.set(0.5);
     life2.width = 50;
     life2.height = 50;
@@ -84,7 +84,7 @@ function startGame() {
     life2.y = 25;
     app.stage.addChild(life2);
 
-    const life3 = PIXI.Sprite.from('../images/ball.png');
+    const life3 = PIXI.Sprite.from('./images/ball.png');
     life3.anchor.set(0.5);
     life3.width = 50;
     life3.height = 50;
@@ -96,7 +96,7 @@ function startGame() {
     let gols = 0;
     let contador = 3;
 
-    const ball = PIXI.Sprite.from('../images/ball.png');
+    const ball = PIXI.Sprite.from('./images/ball.png');
     ball.anchor.set(0.5);
     ball.width = 250;
     ball.height = 250;
@@ -115,7 +115,7 @@ function startGame() {
     // chancesText.y = 75;
     // app.stage.addChild(chancesText);
 
-    const winText = PIXI.Sprite.from('../images/ganhou.png');
+    const winText = PIXI.Sprite.from('./images/ganhou.png');
     winText.anchor.set(0.5);
     winText.x = app.screen.width / 2;
     winText.y = app.screen.height / 2;
@@ -126,7 +126,7 @@ function startGame() {
     //     window.location.reload();
     // }
 
-    const loseText = PIXI.Sprite.from('../images/perdeu.png');
+    const loseText = PIXI.Sprite.from('./images/perdeu.png');
     loseText.anchor.set(0.5);
     loseText.x = app.screen.width / 2;
     loseText.y = app.screen.height / 2;
