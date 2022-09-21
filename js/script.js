@@ -42,14 +42,7 @@ background.width = app.screen.width;
 background.height = app.screen.height;
 app.stage.addChild(background);
 
-const startText = new PIXI.Text('Faça 3 gols!\nClique para começar', {
-    fill: '0x000000',
-    stroke: '#fff',
-    fontSize: 50,
-    align: 'center',
-    strokeThickness: 2
-
-});
+const startText = PIXI.Sprite.from('../images/titulo.png');
 startText.anchor.set(0.5);
 startText.x = app.screen.width / 2;
 startText.y = app.screen.height / 2;
@@ -122,13 +115,7 @@ function startGame() {
     // chancesText.y = 75;
     // app.stage.addChild(chancesText);
 
-    const winText = new PIXI.Text('Ganhou!\nClique para continuar', {
-        fill: '0x000000',
-        stroke: '#fff',
-        fontSize: 50,
-        align: 'center',
-        strokeThickness: 2
-    });
+    const winText = PIXI.Sprite.from('../images/ganhou.png');
     winText.anchor.set(0.5);
     winText.x = app.screen.width / 2;
     winText.y = app.screen.height / 2;
@@ -139,14 +126,7 @@ function startGame() {
     //     window.location.reload();
     // }
 
-    const loseText = new PIXI.Text('Perdeu!\nClique para continuar', {
-        fill: '0x000000',
-        stroke: '#fff',
-        fontSize: 50,
-        align: 'center',
-        strokeThickness: 2
-
-    });
+    const loseText = PIXI.Sprite.from('../images/perdeu.png');
     loseText.anchor.set(0.5);
     loseText.x = app.screen.width / 2;
     loseText.y = app.screen.height / 2;
