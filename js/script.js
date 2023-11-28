@@ -61,6 +61,31 @@ function onClick1() {
 
 function startGame() {
     musicClickPlay();
+
+    const goleiroSprite = PIXI.Sprite.from('./images/goleiro.png');
+    goleiroSprite.anchor.set(0.5);
+    goleiroSprite.x = app.screen.width / 2;
+    goleiroSprite.y = app.screen.height - 185;
+    goleiroSprite.scale.set(.5);
+    app.stage.addChild(goleiroSprite);
+
+    let final = false;
+
+    app.ticker.add((delta) => {
+        if (final === true) {
+            goleiroSprite.x -= 2 * delta;
+            if (goleiroSprite.x < 290) {
+                final = false;
+            }
+        }
+        else if (final === false) {
+            goleiroSprite.x += 2 * delta;
+            if (goleiroSprite.x > 550) {
+                final = true;
+            }
+        }
+    });
+
     const protagonista = PIXI.Sprite.from('./images/target.png');
     protagonista.anchor.set(0.5);
     protagonista.width = 50;
@@ -153,14 +178,29 @@ function startGame() {
             if (contador > 0) {
                 kickClickPlay();
                 console.log('x: ' + protagonista.x + ' ' + 'y: ' + protagonista.y);
+                console.log('x: ' + goleiroSprite.x + ' ' + 'y: ' + goleiroSprite.y);
                 if (protagonista.x >= 258.5 && protagonista.x <= 596.5 && protagonista.y >= 361.5 && protagonista.y <= 528.5) {
-                    console.log("Gol!!!");
-                    openingClickPlay();
-                    gols = gols + 1;
-                    if (gols >= 3) {
-                        console.log("Ganhou");
-                        app.stage.removeChild(ball);
-                        app.stage.addChild(winText);
+                    if (protagonista.x <= goleiroSprite.x + 101 && protagonista.x >= goleiroSprite.x - 101 &&
+                        protagonista.y <= goleiroSprite.y + 151 && protagonista.y >= goleiroSprite.y - 151) {
+                        console.log("%cGoleiro", 'background: red;')
+                        contador = contador - 1;
+                        app.stage.removeChild(arrayLife[contador]);
+                        if (contador <= 0) {
+                            console.log("Perdeu");
+                            loseClickPlay();
+                            app.stage.removeChild(ball);
+                            app.stage.addChild(loseText);
+                        }
+                    }
+                    else {
+                        console.log("Gol!!!");
+                        openingClickPlay();
+                        gols = gols + 1;
+                        if (gols >= 3) {
+                            console.log("Ganhou");
+                            app.stage.removeChild(ball);
+                            app.stage.addChild(winText);
+                        }
                     }
                 }
                 else {
